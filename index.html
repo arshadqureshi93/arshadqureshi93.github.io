@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="./favicon.png">
     <meta name="description" content="Software Developer specializing in Frappe Framework, ERPNext, and enterprise ERP systems. 2+ years of experience building scalable business applications.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
         :root {
             --bg: #0a0a0b;
@@ -140,8 +140,60 @@
             padding-top: 60px;
         }
 
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            width: 100%;
+        }
+
         .hero-content {
-            max-width: 720px;
+            max-width: 620px;
+            flex: 1;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+            transition: all 0.3s;
+        }
+
+        .hero-image img:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.25);
+        }
+
+        .hero-annotation {
+            position: absolute;
+            top: -60px;
+            left: -30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-annotation-text {
+            font-family: 'Caveat', cursive;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fbbf24;
+            transform: rotate(-6deg);
+            white-space: nowrap;
+        }
+
+        .hero-annotation-arrow {
+            margin-top: -2px;
+            transform: rotate(10deg) translateX(20px);
         }
 
         .hero-badge {
@@ -627,6 +679,78 @@
             fill: var(--text-muted);
         }
 
+        /* Calligraphy Annotations */
+        .note {
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            color: #fbbf24;
+            display: inline-block;
+            line-height: 1.2;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .section-header .section-title {
+            margin-bottom: 0;
+        }
+
+        .section-header-wrap {
+            margin-bottom: 40px;
+        }
+
+        .section-header-wrap .section-label {
+            margin-bottom: 8px;
+        }
+
+        .note-scatter-right {
+            font-size: 22px;
+            transform: rotate(3deg);
+            position: relative;
+            top: -4px;
+        }
+
+        .note-scatter-left {
+            font-size: 21px;
+            transform: rotate(-3deg);
+            margin-bottom: 6px;
+        }
+
+        .note-float {
+            font-size: 20px;
+            transform: rotate(-5deg);
+            opacity: 0.9;
+        }
+
+        .hero-annotation-mobile {
+            display: none;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .note-underline {
+            position: relative;
+        }
+
+        .note-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fbbf24;
+            border-radius: 2px;
+            transform: rotate(-1deg);
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
@@ -658,6 +782,36 @@
 
             .hamburger {
                 display: flex;
+            }
+
+            .hero-inner {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-annotation {
+                display: none;
+            }
+
+            .hero-annotation-mobile {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .note-scatter-right,
+            .note-scatter-left,
+            .note-float {
+                display: none;
+            }
+
+            .hero-image img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-links {
+                justify-content: center;
             }
 
             .hero h1 {
@@ -708,6 +862,7 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
+        <div class="hero-inner">
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="dot"></span>
@@ -730,12 +885,25 @@
                 </a>
             </div>
         </div>
+        <div class="hero-image">
+            <div class="hero-annotation">
+                <span class="hero-annotation-text">this guy is me</span>
+                <svg class="hero-annotation-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M20 2 C18 12, 22 22, 24 34" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <path d="M18 28 L24 34 L28 26" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+            <img src="./profile.jpg" alt="Arshad Qureshi">
+            <div class="hero-annotation-mobile">- this guy is me -</div>
+        </div>
+        </div>
     </section>
 
     <!-- About -->
     <section class="about" id="about">
         <div class="section-label">// about</div>
         <h2 class="section-title">Who I am</h2>
+        <div style="text-align:center;margin-top:-30px;margin-bottom:30px;"><span class="note note-scatter-left">a quick intro! &#8595;</span></div>
         <div class="about-grid">
             <div class="about-text">
                 <p>I'm a Software Developer with 2+ years of experience building enterprise-grade ERP systems on the Frappe Framework. Currently at <strong style="color:var(--text)">Hybrowlabs Technologies</strong>, I work on client-facing projects for a leading EdTech company, handling everything from requirement gathering to production deployment.</p>
@@ -767,6 +935,7 @@
     <section class="experience" id="experience">
         <div class="section-label">// experience</div>
         <h2 class="section-title">Where I've worked</h2>
+        <div style="text-align:center;margin-top:-30px;margin-bottom:30px;"><span class="note note-scatter-left">2+ years and counting... &#9997;</span></div>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -799,6 +968,7 @@
     <section class="projects" id="projects">
         <div class="section-label">// projects</div>
         <h2 class="section-title">What I've built</h2>
+        <div style="text-align:center;margin-top:-30px;margin-bottom:30px;"><span class="note note-scatter-right">stuff I'm proud of &#8595;</span></div>
         <div class="projects-grid">
             <div class="project-card featured">
                 <div class="project-icon" style="background:rgba(34,197,94,0.1)">&#128275;</div>
@@ -885,6 +1055,7 @@
 
     <!-- Open Source -->
     <section class="opensource" id="opensource">
+        <span class="note note-scatter-left">proud of these &#10084;</span>
         <div class="section-label">// open source</div>
         <h2 class="section-title">Contributions to Frappe Framework</h2>
 
@@ -911,8 +1082,13 @@
 
     <!-- Skills -->
     <section class="skills" id="skills">
-        <div class="section-label">// skills</div>
-        <h2 class="section-title">Tech Stack</h2>
+        <div class="section-header-wrap">
+            <div class="section-label">// skills</div>
+            <div class="section-header">
+                <h2 class="section-title">Tech Stack</h2>
+                <span class="note note-scatter-right">tools of the trade &#128295;</span>
+            </div>
+        </div>
         <div class="skills-grid">
             <div class="skill-group">
                 <h3>Languages</h3>
@@ -972,7 +1148,8 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="section-label">// contact</div>
-        <h2 class="section-title">Let's Connect</h2>
+        <h2 class="section-title" style="margin-bottom:10px;">Let's Connect</h2>
+        <div style="margin-bottom:14px;"><span class="note note-float" style="font-size:22px;">don't be a stranger! &#128075;</span></div>
         <p>Feel free to reach out for collaborations, opportunities, or just to say hello.</p>
         <div class="contact-links">
             <a href="mailto:arshadqureshiofc@gmail.com" class="contact-link">
