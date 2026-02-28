@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arshad Qureshi | Software Developer</title>
+    <meta name="description" content="Software Developer specializing in Frappe Framework, ERPNext, and enterprise ERP systems. 2+ years of experience building scalable business applications.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+            --bg: #0a0a0b;
+            --bg-card: #111113;
+            --bg-card-hover: #18181b;
+            --border: #27272a;
+            --text: #fafafa;
+            --text-muted: #a1a1aa;
+            --text-dim: #71717a;
+            --accent: #3b82f6;
+            --accent-dim: #1d4ed8;
+            --green: #22c55e;
+            --purple: #a78bfa;
+            --orange: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 11, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: var(--green);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .dot {
+            width: 7px;
+            height: 7px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dim);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-dim);
+        }
+
+        /* About */
+        .about {
+            padding-top: 100px;
+            padding-bottom: 60px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        /* Experience */
+        .experience {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -29px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 3px solid var(--accent);
+        }
+
+        .timeline-item:first-child .timeline-dot {
+            background: var(--accent);
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .exp-role {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .exp-company {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .exp-meta {
+            font-size: 13px;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 12px;
+        }
+
+        .exp-desc {
+            list-style: none;
+        }
+
+        .exp-desc li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        .exp-desc li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Projects */
+        .projects {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .project-card.featured {
+            grid-column: 1 / -1;
+        }
+
+        .project-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .project-org {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Open Source */
+        .opensource {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        .pr-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .pr-card:hover {
+            border-color: var(--green);
+        }
+
+        .pr-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(34, 197, 94, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .pr-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .pr-content h3 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .pr-content h3 a:hover {
+            color: var(--accent);
+        }
+
+        .pr-repo {
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+        }
+
+        .pr-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pr-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--green);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skills {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .skill-group h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-item {
+            font-size: 13px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        /* Contact */
+        .contact {
+            padding-top: 80px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+        }
+
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 11, 0.95);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero-desc {
+                font-size: 16px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .pr-card {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">arshad<span>.dev</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#opensource">Open Source</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Available for opportunities
+            </div>
+            <h1>Building Enterprise<br>Systems that <span class="gradient">Scale</span></h1>
+            <p class="hero-desc">Software Developer specializing in Frappe Framework & ERPNext. I build production-grade ERP modules, third-party integrations, and workflow automations that power real businesses.</p>
+            <div class="hero-links">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Get in Touch
+                </a>
+                <a href="https://github.com/arshadqureshi93" target="_blank" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="/Arshad_Qureshi_Resume.pdf" target="_blank" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                    Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="section-label">// about</div>
+        <h2 class="section-title">Who I am</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I'm a Software Developer with 2+ years of experience building enterprise-grade ERP systems on the Frappe Framework. Currently at <strong style="color:var(--text)">Hybrowlabs Technologies</strong>, I work on client-facing projects for a leading EdTech company, handling everything from requirement gathering to production deployment.</p>
+                <p>Previously at <strong style="color:var(--text)">Sahayog Multistate Credit Co-Op</strong>, I built multiple enterprise modules serving 200+ branches, including API integrations with Finacle CBS for real-time financial transactions.</p>
+                <p>I'm also an active open-source contributor with bug fixes merged into the <strong style="color:var(--text)">Frappe Framework core</strong>.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">PRs Merged in Frappe</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Branches Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experience">
+        <div class="section-label">// experience</div>
+        <h2 class="section-title">Where I've worked</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-role">Software Developer</div>
+                <div class="exp-company">Hybrowlabs Technologies Pvt Ltd</div>
+                <div class="exp-meta">Oct 2025 - Present &middot; Remote</div>
+                <ul class="exp-desc">
+                    <li>Working on client-facing projects for a leading EdTech company, handling end-to-end requirement gathering, solution design, and implementation of custom Frappe/ERPNext modules.</li>
+                    <li>Architected a Projection Management system enabling multi-department demand forecasting with consolidated SKU-level projections driving manufacturing P2P and B2B order generation.</li>
+                    <li>Built a Procure-to-Pay (P2P) automation module covering the complete procurement lifecycle with bi-directional Vinculum WMS integration.</li>
+                    <li>Engineered real-time WMS webhook handlers for GRN auto-processing, PO sync, S3-based inventory reconciliation, and order status tracking with circuit breaker patterns.</li>
+                    <li>Implemented multi-level approval workflows (L1 - L4) with SLA tracking, breach notifications, and audit trail logging across all procurement documents.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-role">Software Engineer</div>
+                <div class="exp-company">Sahayog Multistate Credit Co-Op LTD</div>
+                <div class="exp-meta">Sep 2023 - Sep 2025 &middot; Gondia</div>
+                <ul class="exp-desc">
+                    <li>Designed and developed multiple enterprise modules on Frappe Framework for a cooperative credit society with 200+ branches, streamlining business processes and reducing IT dependency.</li>
+                    <li>Built custom API integrations with Finacle CBS for real-time financial transactions and legacy Netwin CBS for historical data access, improving cross-system data accuracy by 25%.</li>
+                    <li>Created scalable, process-driven enterprise solutions handling complex workflows across multiple departments including Admin, Accounts, HR, Purchase, IT, and Business.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="section-label">// projects</div>
+        <h2 class="section-title">What I've built</h2>
+        <div class="projects-grid">
+            <div class="project-card featured">
+                <div class="project-icon" style="background:rgba(59,130,246,0.1)">&#128202;</div>
+                <h3>Projection Management & B2B Order System</h3>
+                <div class="project-org">Hybrowlabs Technologies &middot; Oct 2025 - Present</div>
+                <p>Multi-department demand forecasting system with SKU-level projections, version-controlled quarterly updates, and automatic consolidation with bundle item explosion. Includes B2B Order Punching with intelligent order split service, dispatch routing engine with Redis caching, S3-based inventory sync pipeline, and B2C bulk order upload for marketplace orders.</p>
+                <div class="project-tags">
+                    <span class="tag">Frappe</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Vinculum WMS</span>
+                    <span class="tag">AWS S3</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon" style="background:rgba(167,139,250,0.1)">&#128722;</div>
+                <h3>P2P Procurement Automation</h3>
+                <div class="project-org">Hybrowlabs Technologies &middot; Oct 2025 - Present</div>
+                <p>Complete procurement lifecycle (MR &rarr; RFQ &rarr; SQ &rarr; PO &rarr; GRN &rarr; Invoice) with Vinculum WMS bi-directional sync, GRN webhook handler, SLA tracking, Prospect Supplier portal, and comprehensive audit trails.</p>
+                <div class="project-tags">
+                    <span class="tag">Frappe</span>
+                    <span class="tag">ERPNext</span>
+                    <span class="tag">Vinculum WMS</span>
+                    <span class="tag">AWS S3</span>
+                    <span class="tag">Webhooks</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon" style="background:rgba(251,146,60,0.1)">&#128241;</div>
+                <h3>CRM (Progressive Web App)</h3>
+                <div class="project-org">Sahayog Credit Co-Op &middot; Mar - Sep 2025</div>
+                <a href="https://tinyurl.com/4ab6pzcb" target="_blank" class="project-link">View Project &#8599;</a>
+                <p>WhatsApp-inspired CRM with customized Lead & Appointment doctypes, full CRUD via REST API, deployed as a PWA with offline access and push notifications.</p>
+                <div class="project-tags">
+                    <span class="tag">Frappe REST API</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">PWA</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon" style="background:rgba(34,197,94,0.1)">&#127974;</div>
+                <h3>Share Management - Finacle API</h3>
+                <div class="project-org">Sahayog Credit Co-Op &middot; Oct - Dec 2024</div>
+                <p>Auto-registers customers as shareholders with real-time financial debit/credit via Finacle's APIs. Includes bulk migration of existing customers and audit trails for compliance.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Finacle API</span>
+                    <span class="tag">Server Scripts</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon" style="background:rgba(244,114,182,0.1)">&#128196;</div>
+                <h3>Netwin Statement Portal</h3>
+                <div class="project-org">Sahayog Credit Co-Op &middot; Nov - Dec 2024</div>
+                <p>Financial statement portal for 200+ branches accessing legacy Netwin CBS data post-Finacle migration with secure API integration and Excel export.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">API Integration</span>
+                    <span class="tag">Excel Export</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source -->
+    <section class="opensource" id="opensource">
+        <div class="section-label">// open source</div>
+        <h2 class="section-title">Contributions to Frappe Framework</h2>
+
+        <div class="pr-card">
+            <div class="pr-icon">&#9889;</div>
+            <div class="pr-content">
+                <h3><a href="https://github.com/frappe/frappe/pull/35771" target="_blank">fix(list_view): prevent filters from populating read-only fields</a></h3>
+                <div class="pr-repo">frappe/frappe #35771</div>
+                <span class="pr-badge">&#10003; Merged</span>
+                <p>Fixed a bug where creating a new document from a filtered list view would incorrectly overwrite read-only fields' default values with the active filter values.</p>
+            </div>
+        </div>
+
+        <div class="pr-card">
+            <div class="pr-icon">&#9889;</div>
+            <div class="pr-content">
+                <h3><a href="https://github.com/frappe/frappe/pull/36829" target="_blank">fix(workspace): show role-restricted non-public workspaces in sidebar</a></h3>
+                <div class="pr-repo">frappe/frappe #36829</div>
+                <span class="pr-badge">&#10003; Merged</span>
+                <p>Fixed visibility logic for non-public workspaces with assigned roles. Role-restricted workspaces were not shown to users with matching roles due to incomplete visibility conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <div class="section-label">// skills</div>
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">HTML</span>
+                    <span class="skill-item">CSS</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">C/C++</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Frameworks</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Frappe</span>
+                    <span class="skill-item">ERPNext</span>
+                    <span class="skill-item">HTMX</span>
+                    <span class="skill-item">Jinja</span>
+                    <span class="skill-item">Tailwind CSS</span>
+                    <span class="skill-item">REST APIs</span>
+                    <span class="skill-item">PWA</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Integrations</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Vinculum WMS</span>
+                    <span class="skill-item">Finacle CBS</span>
+                    <span class="skill-item">AWS S3</span>
+                    <span class="skill-item">Webhooks</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Databases</h3>
+                <div class="skill-list">
+                    <span class="skill-item">MariaDB</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">Redis</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Tools</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">GitHub</span>
+                    <span class="skill-item">GitLab</span>
+                    <span class="skill-item">Figma</span>
+                    <span class="skill-item">Ubuntu</span>
+                    <span class="skill-item">Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-label">// contact</div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p>Feel free to reach out for collaborations, opportunities, or just to say hello.</p>
+        <div class="contact-links">
+            <a href="mailto:arshadqureshiofc@gmail.com" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+            </a>
+            <a href="https://linkedin.com/in/arshad-qureshi-803b4a244" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/arshadqureshi93" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+            </a>
+            <a href="tel:+919373355048" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Phone
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Arshad Qureshi. Built with pure HTML, CSS & JS.</p>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY + 100;
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+                if (link) {
+                    if (scrollY >= top && scrollY < top + height) {
+                        link.style.color = 'var(--text)';
+                    } else {
+                        link.style.color = '';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
