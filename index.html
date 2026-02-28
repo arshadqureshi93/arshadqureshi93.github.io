@@ -345,15 +345,15 @@
 
         .timeline {
             position: relative;
-            padding-left: 32px;
+            padding-left: 40px;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 6px;
-            top: 8px;
-            bottom: 8px;
+            left: 7px;
+            top: 0;
+            bottom: 0;
             width: 2px;
             background: var(--border);
         }
@@ -369,13 +369,14 @@
 
         .timeline-dot {
             position: absolute;
-            left: -29px;
+            left: -40px;
             top: 6px;
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: var(--bg);
             border: 3px solid var(--accent);
+            z-index: 1;
         }
 
         .timeline-item:first-child .timeline-dot {
