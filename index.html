@@ -824,8 +824,8 @@
             filter: blur(0);
         }
 
-        /* Stagger children (cards, timeline items, skill groups) */
-        .reveal-stagger > * {
+        /* Individual child reveal (observed per-element) */
+        .reveal-child {
             opacity: 0;
             transform: translateY(24px);
             filter: blur(6px);
@@ -834,16 +834,7 @@
                         filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
-        .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.12s; }
-        .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.24s; }
-        .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.36s; }
-        .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.48s; }
-        .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.60s; }
-        .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.72s; }
-        .reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.84s; }
-
-        .reveal-stagger.visible > * {
+        .reveal-child.visible {
             opacity: 1;
             transform: translateY(0);
             filter: blur(0);
@@ -998,7 +989,7 @@
                 <p>Previously at <strong style="color:var(--text)">Sahayog Multistate Credit Co-Op</strong>, I built multiple enterprise modules serving 200+ branches, including API integrations with Finacle CBS for real-time financial transactions.</p>
                 <p>I'm also an active open-source contributor with bug fixes merged into the <strong style="color:var(--text)">Frappe Framework core</strong>.</p>
             </div>
-            <div class="stats-grid reveal-stagger">
+            <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">2+</div>
                     <div class="stat-label">Years Experience</div>
@@ -1024,7 +1015,7 @@
         <div class="section-label">// experience</div>
         <h2 class="section-title">Where I've worked</h2>
         <div style="text-align:center;margin-top:-30px;margin-bottom:30px;"><span class="note note-scatter-left">2+ years and counting... &#9997;</span></div>
-        <div class="timeline reveal-stagger">
+        <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="exp-role">Software Developer</div>
@@ -1057,7 +1048,7 @@
         <div class="section-label">// projects</div>
         <h2 class="section-title">What I've built</h2>
         <div style="text-align:center;margin-top:-30px;margin-bottom:30px;"><span class="note note-scatter-right">stuff I'm proud of &#8595;</span></div>
-        <div class="projects-grid reveal-stagger">
+        <div class="projects-grid">
             <div class="project-card featured">
                 <div class="project-icon" style="background:rgba(34,197,94,0.1)">&#128275;</div>
                 <h3>Permission Studio</h3>
@@ -1177,7 +1168,7 @@
                 <span class="note note-scatter-right">tools of the trade &#128295;</span>
             </div>
         </div>
-        <div class="skills-grid reveal-stagger">
+        <div class="skills-grid">
             <div class="skill-group">
                 <h3>Languages</h3>
                 <div class="skill-list">
@@ -1287,9 +1278,30 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Observe every individual content block on the page
+        document.querySelectorAll([
+            '.section-label',
+            '.section-title',
+            '.section-header-wrap',
+            '.section-header',
+            '.note',
+            '.about-text p',
+            '.stats-grid > *',
+            '.timeline > .timeline-item',
+            '.projects-grid > *',
+            '.pr-card',
+            '.skills-grid > *',
+            '.contact-links > *',
+            '.contact p',
+            'footer p'
+        ].join(',')).forEach(el => {
+            el.classList.add('reveal-child');
             revealObserver.observe(el);
         });
 
